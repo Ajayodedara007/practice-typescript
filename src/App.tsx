@@ -1,10 +1,10 @@
 import "./App.css";
 import type { Task } from "./types/Task";
-import { getIncompleteTasks, getStatusMessage } from "./utils/TaskUtils";
 
 function App() {
   const tasks: Task[] = [
     {
+      type: "regular",
       id: 1,
       title: "Learn TypeScript",
       description: "Start with basic types and interfaces",
@@ -12,28 +12,30 @@ function App() {
       status: "todo",
     },
     {
+      type: "meeting",
       id: 2,
       title: "Build a Task Manager",
       description: "Use TypeScript with React",
       completed: true,
       status: "done",
+      time: "11:30",
     },
   ];
 
-  // Reusable generic function
-  function getFirst<T>(arr: T[]): T {
-    return arr[0];
+  //  Function after data
+  function printTask(task: Task) {
+    console.log("Task type is:", task.type);
+
+    if (task.type === "regular") {
+      console.log("Regular Task:", task.title);
+    } else {
+      console.log("Meeting Task at", task.time);
+    }
   }
 
-  const firstTask = getFirst(tasks);
-
-  console.log("Get First task", firstTask);
-
-  const incompleteTasks = getIncompleteTasks(tasks);
-  console.log("Incomplete tasks:", incompleteTasks);
-
-  const message = getStatusMessage("in-progress");
-  console.log("Message:", message);
+  //  Call it
+  printTask(tasks[0]);
+  printTask(tasks[1]);
 
   return (
     <>
