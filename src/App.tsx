@@ -7,13 +7,13 @@ function App() {
       id: 1,
       title: "Buy groceries",
       description: "Milk, Bread, Eggs",
-      completed: false,
+      completed: "todo",
     },
     {
       id: 2,
       title: "Study TypeScript",
       description: "Learn types and interfaces",
-      completed: true,
+      completed: "done",
     },
   ];
 
