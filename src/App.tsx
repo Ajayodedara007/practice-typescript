@@ -20,6 +20,15 @@ function App() {
     },
   ];
 
+  // Reusable generic function
+  function getFirst<T>(arr: T[]): T {
+    return arr[0];
+  }
+
+  const firstTask = getFirst(tasks);
+
+  console.log("Get First task", firstTask);
+
   const incompleteTasks = getIncompleteTasks(tasks);
   console.log("Incomplete tasks:", incompleteTasks);
 
