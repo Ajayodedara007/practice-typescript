@@ -4,7 +4,8 @@ export interface Task {
   id: number;
   title: string;
   description: string;
-  completed: TaskStatus;
+  completed: boolean;
+  status: TaskStatus;
 }
 
 // export type Task = {

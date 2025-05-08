@@ -1,21 +1,27 @@
 import "./App.css";
 import type { Task } from "./types/Task";
+import { getIncompleteTasks } from "./utils/TaskUtils";
 
 function App() {
   const tasks: Task[] = [
     {
       id: 1,
-      title: "Buy groceries",
-      description: "Milk, Bread, Eggs",
-      completed: "todo",
+      title: "Learn TypeScript",
+      description: "Start with basic types and interfaces",
+      completed: false,
+      status: "todo",
     },
     {
       id: 2,
-      title: "Study TypeScript",
-      description: "Learn types and interfaces",
-      completed: "done",
+      title: "Build a Task Manager",
+      description: "Use TypeScript with React",
+      completed: true,
+      status: "done",
     },
   ];
+
+  const incomplete = getIncompleteTasks(tasks);
+  console.log("Incomplete tasks:", incomplete);
 
   return (
     <>
