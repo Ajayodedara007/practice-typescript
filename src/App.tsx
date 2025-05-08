@@ -1,6 +1,6 @@
 import "./App.css";
 import type { Task } from "./types/Task";
-import { getIncompleteTasks } from "./utils/TaskUtils";
+import { getIncompleteTasks, getStatusMessage } from "./utils/TaskUtils";
 
 function App() {
   const tasks: Task[] = [
@@ -31,6 +31,9 @@ function App() {
 
   const incompleteTasks = getIncompleteTasks(tasks);
   console.log("Incomplete tasks:", incompleteTasks);
+
+  const message = getStatusMessage("in-progress");
+  console.log("Message:", message);
 
   return (
     <>
