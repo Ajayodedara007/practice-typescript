@@ -20,8 +20,8 @@ function App() {
     },
   ];
 
-  const incomplete = getIncompleteTasks(tasks);
-  console.log("Incomplete tasks:", incomplete);
+  const incompleteTasks = getIncompleteTasks(tasks);
+  console.log("Incomplete tasks:", incompleteTasks);
 
   return (
     <>
