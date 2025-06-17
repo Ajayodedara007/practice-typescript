@@ -22,20 +22,21 @@ function App() {
     },
   ];
 
-  //  Function after data
-  function printTask(task: Task) {
-    console.log("Task type is:", task.type);
-
-    if (task.type === "regular") {
-      console.log("Regular Task:", task.title);
-    } else {
-      console.log("Meeting Task at", task.time);
-    }
+  interface TaskOne {
+    readonly id: number;
+    readonly title: string;
+    readonly description: string;
+    readonly completed: boolean;
   }
 
-  //  Call it
-  printTask(tasks[0]);
-  printTask(tasks[1]);
+  const task: TaskOne = {
+    id: 1,
+    title: "Learn TypeScript",
+    description: "Learn about types and interfaces",
+    completed: false,
+  };
+
+  // task.id = 2; not able to asign
 
   return (
     <>
